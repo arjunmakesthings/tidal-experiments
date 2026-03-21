@@ -1,0 +1,25 @@
+-- each `dx' (like d1) is a stream 1. from my startup-file, i have 12 channels.
+
+-- the $ applies everything on the left to everything on the right
+
+d1 $ "bd bd"
+
+-- each channel can also be a stack. 
+
+d1 $ stack [
+    sound "bd bd*2", 
+    sound "hh*2 [sn cp] cp future*4", 
+    sound "arpy" +| n "0 .. 15"
+]
+
+-- the more things you put, the faster it'll get. you can also make a sub-sequence; i.e: 1 2 3 4 can be 1 [23] 3 4. like: 
+
+d1 $ "bd bd bd bd"
+
+d2 $ "bd [bd bd] bd bd"
+
+-- ^ still four notes, but played in a different sequence of time.
+
+-- samples loaded are here: /Users/a/Library/Application Support/SuperCollider
+
+d1 $ "bass:1"
