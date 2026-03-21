@@ -22,4 +22,25 @@ d2 $ "bd [bd bd] bd bd"
 
 -- samples loaded are here: /Users/a/Library/Application Support/SuperCollider
 
-d1 $ "bass:1"
+-- notes: 
+
+-- $ signifies a pattern; while # is a modification on the notes. 
+d1 $ n "f a c e" # s "superpiano"
+
+-- visualizing a pattern:
+drawLine "a [b*2] c"
+
+-- waves to manipulate values: 
+
+d1 $ sound "bd*4" # gain (slow 2 $ range 0.5 2 sin)
+
+
+
+
+
+
+
+
+
+
+
