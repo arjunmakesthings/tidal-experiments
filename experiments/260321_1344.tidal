@@ -1,0 +1,6 @@
+d1 $ stack [
+  sound "bd bd*2",
+  sound "hh*2 [sn cp] cp future*4",
+  sound "arpy" +| n "0 .. 15"
+]
+
