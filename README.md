@@ -1,2 +1,1 @@
-# tidal-experiments
-experiments with tidal cycles.
+repo to store wip work with tidal cycles. 
