@@ -1,4 +1,8 @@
--- each `dx' (like d1) is a stream 1. from my startup-file, i have 12 channels.
+-- flows like so: pattern (tidal) --osc--> super-dirt (maps to synth, samples, etc (translator)) -> super-collider (sound engine: runs, processes, outputs). 
+
+-- each `dx' (like d1) is a pattern. these are connected to the superdirt synth to play samples, synths, etc. 
+
+-- from my startup-file in supercollider, i have 12 channels.
 
 -- the $ applies everything on the left to everything on the right
 
@@ -16,11 +20,29 @@ d1 $ stack [
 
 d1 $ "bd bd bd bd"
 
-d2 $ "bd [bd bd] bd bd"
+d2 $ "bd [bd bd] bd"
 
 -- ^ still four notes, but played in a different sequence of time.
 
+-- you can see a pattern with this: 
+drawLine "1 [2 3] 4"
+
 -- samples loaded are here: /Users/a/Library/Application Support/SuperCollider
+d2 $ "bd [bd bd] bd" # s "808bd"
+
+-- stopping: 
+-- ctrl + option stops everything. 
+-- hush stops all patterns. 
+-- panic does hush + kills super-dirt processes. 
+
+-------------------------------------------------------------------------
+
+-- pattern structure: 
+
+d1 $ n "0 1 2 3" # s "drum"
+
+d1 $ sound "drum" + n "0 1 2 3"
+
 
 -- notes: 
 
@@ -28,15 +50,11 @@ d2 $ "bd [bd bd] bd bd"
 d1 $ n "f a c e" # s "superpiano"
 
 -- visualizing a pattern:
-drawLine "a [b*2] c"
+
 
 -- waves to manipulate values: 
 
 d1 $ sound "bd*4" # gain (slow 2 $ range 0.5 2 sin)
-
-
-
-
 
 
 
